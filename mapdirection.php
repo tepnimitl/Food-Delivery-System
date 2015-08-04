@@ -197,7 +197,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </div>
   </div>
   <div data-role="panel" id="overmap" class="ui-content">
-    <p><a href="#overlayPanel" class="ui-btn ui-btn-b ui-btn-inline ui-overlay-shadow ui-corner-all ui-shadow"> CLICK HERE <span class="glyphicon glyphicon-th-list"></span></a></p>
+    <p><a href="#overlayPanel" class="ui-btn ui-btn-b ui-btn-inline ui-overlay-shadow ui-corner-all ui-shadow"> START ROUTING HERE <span class="glyphicon glyphicon-th-list"></span></a></p>
   </div>
 
     <div id="map-canvas"></div>
