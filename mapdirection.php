@@ -70,28 +70,13 @@ var map;
 
 function initialize() {
   directionsDisplay = new google.maps.DirectionsRenderer();
-  var chicago = new google.maps.LatLng(38.892721,-77.079252);
+  var dc = new google.maps.LatLng(38.892721,-77.079252);
   var mapOptions = {
     zoom:10,
-    center: chicago
+    center: dc
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   directionsDisplay.setMap(map);
-}
-
-function calcRouteInput() {
-  var start2 = document.getElementById('start2').value;
-  var end2 = document.getElementById('end2').value;
-  var request2 = {
-      origin:start2,
-      destination:end2,
-      travelMode: google.maps.TravelMode.DRIVING
-  };
-  directionsService.route(request2, function(response2, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response2);
-    }
-  });
 }
 
 function calcRouteSelect() {
@@ -106,6 +91,21 @@ function calcRouteSelect() {
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
+    }
+  });
+}
+
+function calcRouteInput() {
+  var start2 = document.getElementById('start2').value;
+  var end2 = document.getElementById('end2').value;
+  var request2 = {
+      origin:start2,
+      destination:end2,
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request2, function(response2, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response2);
     }
   });
 }
